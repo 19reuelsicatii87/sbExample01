@@ -10,14 +10,14 @@ public class webApp {
 	
 	
 	@GetMapping("/")
-	public String index() {		
+	public String home() {		
 		
-		return "index";
+		return "pages/home";
 	}
 	
 	
 	@GetMapping("/login")
-	public String content() {		
+	public String login() {		
 		
 		return "pages/login";
 	}
