@@ -1,6 +1,6 @@
 package sicat.sbproject.example01.repository;
 
-import sicat.sbproject.example01.model.user;
+import sicat.sbproject.example01.model.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 //CRUD refers Create, Read, Update, Delete
 
 @Repository
-public interface userRepository extends CrudRepository<user, Integer> {
+public interface UserRepository extends CrudRepository<User, Integer> {
     // You can define custom query methods if needed, e.g.
     // List<User> findByName(String name);
 }

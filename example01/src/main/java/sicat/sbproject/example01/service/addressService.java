@@ -1,27 +1,27 @@
 package sicat.sbproject.example01.service;
 
-import sicat.sbproject.example01.model.address;
-import sicat.sbproject.example01.repository.addressRepository;
+import sicat.sbproject.example01.model.Address;
+import sicat.sbproject.example01.repository.AddressRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
 @Service
-public class addressService {
+public class AddressService {
 
 	@Autowired
-	private addressRepository addressRepository;
+	private AddressRepository addressRepository;
 
-	public Iterable<address> getAllAddresses() {
+	public Iterable<Address> getAllAddresses() {
 		return addressRepository.findAll();
 	}
 
-	public Optional<address> getAddressById(Integer id) {
+	public Optional<Address> getAddressById(Integer id) {
 		return addressRepository.findById(id);
 	}
 
-	public address saveAddress(address user) {
+	public Address saveAddress(Address user) {
 		return addressRepository.save(user);
 	}
 
@@ -29,7 +29,7 @@ public class addressService {
 		addressRepository.deleteById(id);
 	}
 
-	public address updateAddress(Integer id, address updatedAddress) {
+	public Address updateAddress(Integer id, Address updatedAddress) {
 		return addressRepository
 			.findById(id)
 			.map(existingAddress -> {

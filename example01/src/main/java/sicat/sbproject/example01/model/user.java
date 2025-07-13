@@ -8,7 +8,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "user")
-public class user {
+public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,15 +17,15 @@ public class user {
 	private String name;
 	private String email;
 
-	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-	@JsonManagedReference
-	private List<address> addresses;
+	 @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+	 @JsonManagedReference
+	 private List<Address> addresses;	
 
 	// Constructors
-	public user() {
+	public User() {
 	}
 
-	public user(String name, String email) {
+	public User(String name, String email) {
 		this.name = name;
 		this.email = email;
 	}
@@ -55,13 +55,13 @@ public class user {
 		this.email = email;
 	}
 
-	public List<address> getAddresses() {
+	public List<Address> getAddresses() {
 		return addresses;
 	}
 
-	public void setAddresses(List<address> addresses) {
+	public void setAddresses(List<Address> addresses) {
 		// Set the reverse relationship
-		for (address addr : addresses) {
+		for (Address addr : addresses) {
 			addr.setUser(this);
 		}
 		this.addresses = addresses;

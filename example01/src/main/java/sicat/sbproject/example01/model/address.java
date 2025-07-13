@@ -1,11 +1,11 @@
 package sicat.sbproject.example01.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.*;
 
 import jakarta.persistence.*;
 
 @Entity
-public class address {
+public class Address {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,8 +18,9 @@ public class address {
 
 	@ManyToOne
 	@JoinColumn(name = "user_id")
-	@JsonBackReference
-	private user user;
+	//@JsonBackReference
+	@JsonIgnoreProperties({"addresses"})
+	private User user;
 
 	// Getters and setters
 	public Integer getId() {
@@ -62,11 +63,11 @@ public class address {
 		this.state = state;
 	}
 
-	public user getUser() {
+	public User getUser() {
 		return user;
 	}
 
-	public void setUser(user user) {
+	public void setUser(User user) {
 		this.user = user;
 	}
 }

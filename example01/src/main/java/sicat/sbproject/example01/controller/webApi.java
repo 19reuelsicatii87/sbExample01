@@ -10,56 +10,92 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import sicat.sbproject.example01.model.user;
-import sicat.sbproject.example01.service.userService;
+import sicat.sbproject.example01.model.User;
+import sicat.sbproject.example01.service.UserService;
 
-import sicat.sbproject.example01.model.address;
-import sicat.sbproject.example01.service.addressService;
+import sicat.sbproject.example01.model.Address;
+import sicat.sbproject.example01.service.AddressService;
+
+import sicat.sbproject.example01.model.Department;
+import sicat.sbproject.example01.service.DepartmentService;
+
+import sicat.sbproject.example01.model.Employee;
+import sicat.sbproject.example01.service.EmployeeService;
 
 @RestController
-public class webApi {
+public class WebApi {
 
 	@Autowired
-	private userService userServ;
+	private UserService userService;
+
+	@Autowired
+	private AddressService addressService;
+
+	@Autowired
+	private DepartmentService departmentService;	
 	
 	@Autowired
-	private addressService addressServ;
+	private EmployeeService employeeService;
 
 	@GetMapping("/webApiGreeting")
 	String hello() {
 		return "Hello World!!!";
 	}
-	
-	
+
 	// USER ENDPOINTS
 	// ===========================================
 	@GetMapping("/api/user")
-	public Iterable<user> getAllUsers() {
-		return userServ.getAllUsers();
-	}
-	
-	@GetMapping("/api/user/{id}")
-	public Optional<user> getUserById(@PathVariable Integer id) {
-		return userServ.getUserById(id);
-	}
-	
-	@PostMapping("/api/user")
-	public user updateUser(@RequestBody user createUser) {
-		return userServ.saveUser(createUser);
+	public Iterable<User> getAllUsers() {
+		return userService.getAllUsers();
 	}
 
+	@GetMapping("/api/user/{id}")
+	public Optional<User> getUserById(@PathVariable Integer id) {
+		return userService.getUserById(id);
+	}
+
+	@PostMapping("/api/user")
+	public User createUser(@RequestBody User createUser) {
+		return userService.saveUser(createUser);
+	}
 
 	@PutMapping("/api/user/{id}")
-	public user updateUser(@PathVariable Integer id, @RequestBody user updatedUser) {
-		return userServ.updateUser(id, updatedUser);
+	public User updateUser(@PathVariable Integer id, @RequestBody User updatedUser) {
+		return userService.updateUser(id, updatedUser);
 	}
-	
-	
+
 	// ADDRESS ENDPOINTS
 	// ===========================================
 	@GetMapping("/api/address")
-	public Iterable<address> getAllAddress() {
-		return addressServ.getAllAddresses();
+	public Iterable<Address> getAllAddress() {
+		return addressService.getAllAddresses();
 	}
+
+	@PostMapping("/api/address")
+	public User createAddress(@RequestBody User createAddress) {
+		return userService.saveUser(createAddress);
+	}
+
+	// DEPARTMENT ENDPOINTS
+	// ===========================================
+	@GetMapping("/api/department")
+	public Iterable<Department> getAllDepartment() {
+		return departmentService.getAllDepartment();
+	}
+
+	@PostMapping("/api/department")
+	public Department createDepartment(@RequestBody Department createDepartment) {
+		return departmentService.saveDepartment(createDepartment);
+	}
+	
+	
+	// EMPLOYEE ENDPOINTS
+	// ===========================================
+	@GetMapping("/api/employee")
+	public Iterable<Employee> getAllEmployee() {
+		return employeeService.getAllEmployee();
+	}
+	
+	
 
 }

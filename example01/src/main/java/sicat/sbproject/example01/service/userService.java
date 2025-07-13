@@ -1,27 +1,27 @@
 package sicat.sbproject.example01.service;
 
-import sicat.sbproject.example01.model.user;
-import sicat.sbproject.example01.repository.userRepository;
+import sicat.sbproject.example01.model.User;
+import sicat.sbproject.example01.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
 @Service
-public class userService {
+public class UserService {
 
 	@Autowired
-	private userRepository userRepository;
+	private UserRepository userRepository;
 
-	public Iterable<user> getAllUsers() {
+	public Iterable<User> getAllUsers() {
 		return userRepository.findAll();
 	}
 
-	public Optional<user> getUserById(Integer id) {
+	public Optional<User> getUserById(Integer id) {
 		return userRepository.findById(id);
 	}
 
-	public user saveUser(user user) {
+	public User saveUser(User user) {
 		return userRepository.save(user);
 	}
 
@@ -29,7 +29,7 @@ public class userService {
 		userRepository.deleteById(id);
 	}
 
-	public user updateUser(Integer id, user updatedUser) {
+	public User updateUser(Integer id, User updatedUser) {
 		
 		return userRepository
 				.findById(id)
