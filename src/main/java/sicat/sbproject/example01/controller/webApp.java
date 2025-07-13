@@ -6,18 +6,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class webApp {
+public class WebApp {
 	
 	
 	@GetMapping("/")
-	public String index() {		
+	public String home() {		
 		
-		return "index";
+		return "pages/home";
 	}
 	
 	
 	@GetMapping("/login")
-	public String content() {		
+	public String login() {		
 		
 		return "pages/login";
 	}
