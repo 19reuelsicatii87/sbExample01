@@ -18,8 +18,7 @@ public class Address {
 
 	@ManyToOne
 	@JoinColumn(name = "user_id")
-	//@JsonBackReference
-	@JsonIgnoreProperties({"addresses"})
+	@JsonBackReference
 	private User user;
 
 	// Getters and setters
