@@ -17,29 +17,45 @@
 		<div th:insert="~{components/header :: header}" class=""></div>
 	</section>
 
-	<!--This is the main component-->
-	<div class="container">
-		<section id="main">
 
-			<!--<h1>Landing page</h1>-->
-
-		</section>
-
-		<!-- Success message after registration -->
-		<div th:if="${message}" class="alert alert-success">
-			<p th:text="${message}"></p>
-		</div>
-
-		<!-- Error message on login failure -->
-		<div th:if="${param.error}" class="alert alert-danger">
-			<p>Invalid username or password.</p>
-		</div>
-	</div>
-
-	<!--This is the Contact Us component-->
-	<section id="contactus">
-		<div th:insert="~{components/product-carousel :: product-carousel}" class=""></div>
+	<!--This is the Banner component-->
+	<section id="banner">
+		<div th:insert="~{components/banner :: banner}" class=""></div>
 	</section>
+
+	<!--This is the main component-->
+
+
+
+	<section id="proposal" class="my-5 bg-light">
+		<div class="container py-5">
+
+
+
+
+			<h1 class="mb-4">Proposal Details</h1>
+
+			<div class="card">
+				<div class="card-body">
+					<h3 th:text="'Proposal Number: ' + ${proposal.proposalNumber}"></h3>
+					<p><strong>Customer:</strong> <span th:text="${proposal.customerName}"></span></p>
+					<p><strong>Product:</strong> <span th:text="${proposal.product.name}"></span></p>
+					<p><strong>Description:</strong> <span th:text="${proposal.product.description}"></span></p>
+					<p><strong>Price:</strong> $<span th:text="${proposal.product.price}"></span></p>
+
+					<a th:href="@{/proposals/download/{id}(id=${proposal.id})}" class="btn btn-primary mt-3">Download as
+						PDF</a>
+				</div>
+			</div>
+
+
+		</div>
+	</section>
+
+
+
+
+
 
 	<!--This is the Contact Us component-->
 	<section id="contactus">

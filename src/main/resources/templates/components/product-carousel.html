@@ -1,0 +1,105 @@
+<div th:fragment="product-carousel">
+
+	<!--Product Carousel-->
+	<div class="row m-5 align-items-stretch">
+
+		<div id="productCarousel" class="carousel slide rounded-3 overflow-hidden" data-bs-ride="carousel"
+			data-bs-interval="3000">
+			<div class="carousel-inner">
+
+				<!-- Item 1 -->
+				<div class="carousel-item active">
+					<div class="d-flex flex-column justify-content-center align-items-center">
+						<img th:src="@{/img/custom-works/lumber_rack.jpg}" class="img-fluid rounded"
+							style="width: 100%; height: 620px; object-fit: cover;">
+						<div class="carousel-caption bg-primary bg-opacity-75 rounded p-3">
+							<h5 class="fw-bold text-white">Lumber Rack</h5>
+						</div>
+					</div>
+				</div>
+
+				<!-- Item 2 -->
+				<div class="carousel-item">
+					<div class="d-flex flex-column justify-content-center align-items-center">
+						<img th:src="@{/img/custom-works/moveable_racks.jpg}" class="img-fluid rounded"
+							style="width: 100%; height: 620px; object-fit: cover; object-position: bottom;">
+						<div class="carousel-caption bg-primary bg-opacity-75 rounded p-3">
+							<h5 class="fw-bold text-white">Moveable Racks</h5>
+						</div>
+					</div>
+				</div>
+
+				<!-- Item 3 -->
+				<div class="carousel-item">
+					<div class="d-flex flex-column justify-content-center align-items-center">
+						<img th:src="@{/img/custom-works/pallet_rack.jpg}" class="img-fluid rounded"
+							style="width: 100%; height: 620px; object-fit: cover;">
+						<div class="carousel-caption bg-primary bg-opacity-75 rounded p-3">
+							<h5 class="fw-bold text-white">Pallet Rack</h5>
+						</div>
+					</div>
+				</div>
+
+				<!-- Item 4 -->
+				<div class="carousel-item">
+					<div class="d-flex flex-column justify-content-center align-items-center">
+						<img th:src="@{/img/custom-works/rack_divider.jpg}" class="img-fluid rounded"
+							style="width: 100%; height: 620px; object-fit: cover;">
+						<div class="carousel-caption bg-primary bg-opacity-75 rounded p-3">
+							<h5 class="fw-bold text-white">Rack Divider</h5>
+						</div>
+					</div>
+				</div>
+
+				<!-- Item 5 -->
+				<div class="carousel-item">
+					<div class="d-flex flex-column justify-content-center align-items-center">
+						<img th:src="@{/img/custom-works/slide.jpg}" class="img-fluid rounded"
+							style="width: 100%; height: 620px; object-fit: cover;">
+						<div class="carousel-caption bg-primary bg-opacity-75 rounded p-3">
+							<h5 class="fw-bold text-white">Slide</h5>
+						</div>
+					</div>
+				</div>
+
+				<!-- Item 6 -->
+				<div class="carousel-item">
+					<div class="d-flex flex-column justify-content-center align-items-center">
+						<img th:src="@{/img/custom-works/staircase.jpg}" class="img-fluid rounded"
+							style="width: 100%; height: 620px; object-fit: cover; object-position: bottom;">
+						<div class="carousel-caption bg-primary bg-opacity-75 rounded p-3">
+							<h5 class="fw-bold text-white">Staircase</h5>
+						</div>
+					</div>
+				</div>
+
+				<!-- Item 7 -->
+				<div class="carousel-item">
+					<div class="d-flex flex-column justify-content-center align-items-center">
+						<img th:src="@{/img/custom-works/table_with_wheels.jpg}" class="img-fluid rounded"
+							style="width: 100%; height: 620px; object-fit: cover;">
+						<div class="carousel-caption bg-primary bg-opacity-75 rounded p-3">
+							<h5 class="fw-bold text-white">Table with Wheels</h5>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+
+			<!-- Controls -->
+			<button class="carousel-control-prev custom-carousel-btn" type="button" data-bs-target="#productCarousel"
+				data-bs-slide="prev">
+				<span class="carousel-control-prev-icon custom-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+
+			<button class="carousel-control-next custom-carousel-btn" type="button" data-bs-target="#productCarousel"
+				data-bs-slide="next">
+				<span class="carousel-control-next-icon custom-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
+
+
+		</div>
+	</div>

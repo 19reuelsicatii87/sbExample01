@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.*;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "addresses")
 public class Address {
 
 	@Id
@@ -20,6 +21,16 @@ public class Address {
 	@JoinColumn(name = "user_id")
 	@JsonBackReference
 	private User user;
+
+	// Constructor
+	public Address(String type, String street, String city, String state, User user) {
+		super();
+		this.type = type;
+		this.street = street;
+		this.city = city;
+		this.state = state;
+		this.user = user;
+	}
 
 	// Getters and setters
 	public Integer getId() {

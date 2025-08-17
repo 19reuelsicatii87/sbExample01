@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Home</title>
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+</head>
+
+<body>
+
+	<!--This is the header component-->
+	<section id="header">
+		<div th:insert="~{components/header :: header}" class=""></div>
+	</section>
+
+
+	<!--This is the Banner component-->
+	<section id="banner">
+		<div th:insert="~{components/banner :: banner}" class=""></div>
+	</section>
+
+	<!--This is the main component-->
+
+
+
+	<section id="generate-proposal" class="my-5 bg-light">
+		<div class="container py-5">
+
+
+
+
+			<h1>Select a Product</h1>
+
+			<form method="post" th:action="@{/proposal/generate}">
+				<div class="mb-3">
+					<label for="customerName" class="form-label">Customer Name</label>
+					<input type="text" id="customerName" name="customerName" class="form-control" required />
+				</div>
+
+				<div class="mb-3">
+					<label for="productId" class="form-label">Choose a Product</label>
+					<select id="productId" name="productId" class="form-select" required>
+						<option value="" disabled selected>Select a product</option>
+						<option th:each="product : ${products}" th:value="${product.id}"
+							th:text="${product.name + ' - $' + product.price}">
+						</option>
+					</select>
+				</div>
+
+				<button type="submit" class="btn btn-primary">Generate Proposal</button>
+			</form>
+
+			<div th:if="${error}" class="alert alert-danger mt-3" th:text="${error}"></div>
+
+
+		</div>
+	</section>
+
+
+
+	<!--This is the footer component-->
+	<section id="footer">
+		<div th:insert="~{components/footer :: footer}" class=""></div>
+	</section>
+
+	<!--This is the script for bootstrap-->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>

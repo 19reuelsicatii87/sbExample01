@@ -3,11 +3,11 @@ package sicat.sbproject.example01.model;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "employees")
 public class Employee {
-	
-	
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY) 
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	private String name;

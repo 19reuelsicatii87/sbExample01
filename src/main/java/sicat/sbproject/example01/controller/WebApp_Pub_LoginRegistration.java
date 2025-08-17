@@ -15,7 +15,7 @@ import sicat.sbproject.example01.model.User;
 import sicat.sbproject.example01.service.UserService;
 
 @Controller
-public class WebApp {
+public class WebApp_Pub_LoginRegistration {
 
 	@Autowired
 	private UserService userService;
@@ -24,12 +24,15 @@ public class WebApp {
 	// ============================
 
 	@GetMapping("/")
-	public String greeting(@RequestParam(name = "name", required = false, defaultValue = "World") String name,
-			Model model) {
-
-		model.addAttribute("name", name);
+	public String home() {
 
 		return "pages/home";
+	}
+
+	@GetMapping("/about-us")
+	public String aboutus() {
+
+		return "pages/aboutus";
 	}
 
 	@GetMapping("/login")
